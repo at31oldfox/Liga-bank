@@ -1,0 +1,85 @@
+@mixin menu-text {
+  font-family: "Roboto" "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: $basic-font-color;
+  line-height: 19px;
+}
+
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 88.28%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1172px;
+  }
+}
+
+@mixin list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin thin-text {
+  font-size: 12px;
+  line-height: 16.8px;
+}
+
+@mixin link {
+  text-decoration: none;
+  color: $basic-font-color;
+  &:hover {
+    color: $highlight-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $dark-highlight-color;
+  }
+}
+
+@mixin form-element {
+  box-sizing: border-box;
+  font-family: "Roboto", "Arial", sans-serif;
+  border: 1px solid $basic-font-color;
+  border-radius: 4px;
+
+  &:hover {
+    border: 1px solid $highlight-color;
+    color: $highlight-color;
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $dark-highlight-color;
+    color: $dark-highlight-color;
+  }
+}
+
+@mixin button {
+  font-family: "Roboto", "Arial", sans-serif;
+  background-color: $highlight-color;
+  color: $basic-color;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: $light-highlight-color;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $dark-highlight-color;
+  }
+}
+
+.page-header__logo {
+  z-index: 5;
+}
