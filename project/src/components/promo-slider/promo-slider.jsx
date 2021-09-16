@@ -6,7 +6,7 @@ import {IMAGE_WIDTH} from '../../const.js';
 export default function PromoSlider() {
 
   return (
-    <Slider className="slider" arrows={false} dots={true} dotsClass={'slider__controls'} autoplay={true} autoplaySpeed={4000}>
+    <Slider className="slider" arrows={false} dots={true} dotsClass={'slider__controls'}>
       <div className="slider__item slider__item--first">
         <div className="slider__container container">
           <h1 className="slider__headling">Лига Банк</h1>
