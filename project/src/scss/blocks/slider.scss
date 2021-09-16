@@ -251,15 +251,43 @@
 
     .slider__container {
       background:
-        url("../../img/black-card.png") no-repeat 600px 120px,
-        url("../../img/white-card.png") no-repeat 710px 61px,
         linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%) 700px 130px no-repeat,
         linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%) 50px 130px no-repeat,
         linear-gradient(183.47deg, $highlight-color, $highlight-color) 50px no-repeat;
-      background-size: 333px 228px, 333px 228px, 270px 269px, 150px 269px, 917px 100%;
+      background-size: 270px 269px, 150px 269px, 917px 100%;
       height: 400px;
       padding-left: 170px;
       box-sizing: border-box;
+      position: relative;
+    }
+
+    .slider__container::before {
+      content: "";
+      position: absolute;
+      width: 333px;
+      height: 228px;
+      background: url("../../img/black-card.png");
+      right: 0;
+      top: 120px;
+      z-index: 3;
+
+      @media (min-width: 1200px) {
+        right: 238px;
+      }
+    }
+
+    .slider__container::after {
+      content: "";
+      position: absolute;
+      width: 333px;
+      height: 228px;
+      background: url("../../img/white-card.png");
+      right: -100px;
+      top: 60px;
+
+      @media (min-width: 1200px) {
+        right: 130px;
+      }
     }
   }
 

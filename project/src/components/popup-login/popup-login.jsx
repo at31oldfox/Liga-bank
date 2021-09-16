@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 
 export default function PopupLogin({onCloseClick, onKeyDown}) {
   const [isPasswordVisable, setPasswordVisability] = useState(false);
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onFormSubmit = (evt) => {
+    evt.preventDefault();
+    localStorage.setItem('login', login);
+    localStorage.setItem('password', password);
+    document.removeEventListener('keydown', onKeyDown);
+    onCloseClick();
+  }
 
   return (
     <section className="popup-login">
@@ -22,7 +32,13 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
           <div className="popup-login__logo">
             <img className="popup-login__logo-image" src="img/popup-logo.svg"/>
           </div>
-          <form className="popup-login__form" method="post" action="https://echo.htmlacademy.ru/" name="review-form">
+          <form
+            className="popup-login__form"
+            method="post"
+            onSubmit={onFormSubmit}
+            action="https://echo.htmlacademy.ru/"
+            name="review-form"
+          >
             <div className="popup-login__form-fields">
               <label className="popup-login__label" htmlFor="login">Логин</label>
               <input
@@ -32,6 +48,8 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
                 id="login"
                 required
                 autoFocus
+                value={login}
+                onChange={(evt) => setLogin(evt.target.value)}
               >
               </input>
               <div className="popup-login__password-wrapper">
@@ -42,6 +60,9 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
                     type={isPasswordVisable ? 'text' : 'password'}
                     name="password-field"
                     id="password"
+                    value={password}
+                    onChange={(evt) => setPassword(evt.target.value)}
+                    required
                   >
                   </input>
                   <button
@@ -62,6 +83,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
               className="popup-login__button"
               type="submit"
               name="submit"
+              disabled={!login || !password}
             >
               Войти
             </button>

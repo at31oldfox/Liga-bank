@@ -78,6 +78,11 @@
   &:focus {
     background-color: $dark-highlight-color;
   }
+
+  &:disabled {
+    background-color: $dark-highlight-color;
+    opacity: 0.5;
+  }
 }
 
 .page-header__logo {
