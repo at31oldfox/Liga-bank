@@ -1,7 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
+import PropTypes from 'prop-types';
 
-export default function Header() {
+export default function Header({onLoginClick, onKeyDown}) {
   const [isMenuOpened, setMenuStatus] = useState(false);
 
   return (
@@ -38,7 +39,16 @@ export default function Header() {
             </li>
           </ul>
           <div className="navigation__login">
-            <a className="navigation__login-link" href="#"><span className="navigation__login-text">Войти в Интернет-банк</span></a>
+            <a
+              className="navigation__login-link"
+              href="#"
+              onClick={() => {
+                onLoginClick();
+                document.addEventListener('keydown', onKeyDown);
+              }}
+            >
+              <span className="navigation__login-text">Войти в Интернет-банк</span>
+            </a>
           </div>
           <button
             className="navigation__button"
@@ -58,4 +68,9 @@ export default function Header() {
       </div>
     </header>
   );
+}
+
+Header.propTypes = {
+  onLoginClick: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func.isRequired,
 }

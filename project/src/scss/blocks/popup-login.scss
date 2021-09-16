@@ -1,0 +1,239 @@
+.popup-login {
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  box-sizing: border-box;
+  background-color: rgba($shadow-color, .3);
+}
+
+.popup-login__modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90.63%;
+  border: 4px solid $highlight-color;
+  box-sizing: border-box;
+  background-color: $basic-color;
+  min-height: 455px;
+  padding-top: 45px;
+  padding-bottom: 30px;
+  z-index: 12;
+}
+
+.popup-login__wrapper {
+  width: 93%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.popup-login__label {
+  display: block;
+  margin-left: 6px;
+  margin-bottom: 4px;
+}
+
+.popup-login__input {
+  width: calc(100% - 12px);
+  box-sizing: border-box;
+  margin-left: 6px;
+  height: 60px;
+  border-radius: 4px;
+  border: 1px solid $basic-font-color;
+  margin-bottom: 19px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.popup-login__input[type="password"] {
+  font-size: 24px;
+}
+
+.popup-login__form {
+  padding-top: 19px;
+}
+
+.popup-login__close {
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 12px;
+  height: 12px;
+  top: -9px;
+  right: 7px;
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $highlight-color;
+  }
+
+  &:active::before,
+  &:active::after,
+  &:focus::before,
+  &:focus::after {
+    background-color: $basic-font-color;
+    opacity: 0.5;
+  }
+}
+
+.popup-login__close::before,
+.popup-login__close::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background-color: $basic-font-color;
+}
+
+.popup-login__close::before {
+  transform: rotate(45deg);
+}
+
+.popup-login__close::after {
+  transform: rotate(-45deg);
+}
+
+.popup-login__button {
+  display: block;
+  width: 96%;
+  padding-top: 3px;
+  min-height: 51px;
+  margin: 0 auto;
+  margin-top: 10px;
+  box-sizing: border-box;
+  @include button;
+}
+
+.popup-login__mark {
+  position: absolute;
+  bottom: -40px;
+  background-color: transparent;
+  border: none;
+  display: block;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: $mark-color;
+  margin-top: 12px;
+
+  &:hover {
+    color: $highlight-color;
+  }
+
+  &:active,
+  &:focus {
+    color: darken($mark-color, 20%);
+  }
+}
+
+.popup-login__password {
+  position: relative;
+}
+
+.popup-login__show {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background: url("../../img/eye.svg") 50% 50% no-repeat;
+  right: 10px;
+  bottom: 30px;
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .popup-login__modal {
+    width: 88.28%;
+    min-height: 493px;
+    padding-top: 53px;
+  }
+
+  .popup-login__wrapper {
+    width: 75.5%;
+    margin: 0 auto;
+  }
+
+  .popup-login__label {
+    margin-left: 0;
+    margin-bottom: 4px;
+  }
+
+  .popup-login__input {
+    margin-left: 0;
+    margin-bottom: 25px;
+  }
+
+  .popup-login__form {
+    padding-top: 30px;
+  }
+
+  .popup-login__close {
+    right: 6px;
+  }
+
+  .popup-login__close::before,
+  .popup-login__close::after {
+    height: 23px;
+  }
+
+  .popup-login__input {
+    width: calc(100% - 3px);
+  }
+
+  .popup-login__show {
+    right: 18px;
+    bottom: 35px;
+  }
+
+  .popup-login__button {
+    font-size: 18px;
+    margin-top: 23px;
+    width: calc(100% - 4px);
+    min-height: 60px;
+  }
+
+  .popup-login__mark {
+    position: static;
+    font-size: 12px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
+    transform: none;
+    font-family: "Roboto" "Arial", sans-serif;
+    padding-right: 3px;
+  }
+
+  .popup-login__input[type="password"] {
+    margin-bottom: 8px;
+  }
+
+  .popup-login__show {
+    bottom: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .popup-login__modal {
+    width: 544px;
+  }
+
+  .popup-login__wrapper {
+    width: 426px;
+  }
+}

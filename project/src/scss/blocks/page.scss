@@ -13,3 +13,7 @@
   background-color: $basic-color;
   min-width: 320px;
 }
+
+.page__body--unactive {
+  overflow: hidden;
+}
