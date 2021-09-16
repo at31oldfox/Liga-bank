@@ -1,0 +1,289 @@
+.slider {
+  min-height: 226px;
+  background: $highlight-color;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.slider__container {
+  padding-left: 15px;
+  padding-top: 22px;
+}
+
+.slider__item--first {
+  box-sizing: border-box;
+  padding-left: 0;
+  margin: 0 4.69%;
+  padding-bottom: 30px;
+  position: relative;
+  background: url("../../img/black-card.png") no-repeat 205px 35px,
+    url("../../img/white-card.png") no-repeat 300px 10px,
+    $highlight-color;
+    background-size: 250px 165px, 250px 165px;
+
+    .slider__container {
+      padding-left: 0;
+    }
+}
+
+.slider__list {
+  @include list;
+  display: flex;
+  position: relative;
+  transition: all ease 1s;
+}
+
+.slider__item {
+  min-width: 100%;
+  min-height: 226px;
+}
+
+.slider__headling {
+  color: $basic-color;
+  font-weight: bold;
+  font-size: 38px;
+  margin-bottom: 0;
+}
+
+.slider__description {
+  color: $basic-color;
+  font-size: 16px;
+  margin-top: 17px;
+  margin-bottom: 33px;
+}
+
+.slider__link {
+  @include link;
+  font-size: 14px;
+  background-color: $basic-color;
+  padding: 14px 30px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.slider__controls {
+  @include list;
+  position: absolute;
+  bottom: 5px;
+  left: 45%;
+  display: flex;
+  z-index: 10;
+  flex-direction: row;
+  transform: rotate(-90deg);
+
+  li {
+    width: 6px;
+    height: 6px;
+    margin-right: 17px;
+    margin-bottom: 6px;
+  }
+
+  button {
+    border-radius: 50%;
+    border: none;
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    padding: 0;
+    background-color: $control-color;
+    color: transparent;
+    text-indent: -1000em;
+  }
+
+  .carousel-dots-active button {
+    background-color: $basic-color;
+  }
+}
+
+.slider__control-button--active {
+  background-color: $basic-color;
+}
+
+.slider__item--second {
+  background: url('../../img/slider-2.png') no-repeat -295px, $slider-2-background;
+  background-size: cover, auto auto;
+  margin: 0;
+
+  .slider__headling {
+    color: $basic-font-color;
+  }
+
+  .slider__description {
+    color: $basic-font-color;
+    width: 140px;
+    line-height: 19px;
+    margin-top: 20px;
+  }
+}
+
+.slider__item--third {
+  background: url('../../img/slider-3.png') no-repeat -283px, $slider-3-background;
+  background-size: cover;
+  margin: 0;
+
+  .slider__headling {
+    color: $basic-font-color;
+  }
+
+  .slider__description {
+    color: $basic-font-color;
+  }
+
+  .slider__link {
+    color: $basic-color;
+    background-color: $highlight-color;
+    padding: 14px 37px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .slider,  .slider__item {
+    min-height: 300px;
+  }
+
+  .slider__headling {
+    font-size: 46px;
+  }
+
+  .slider__description {
+    margin-top: 22px;
+    font-size: 18px;
+    margin-bottom: 41px;
+  }
+
+  .slider__link {
+    font-size: 16px;
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+
+  .slider__container {
+    padding-left: 80px;
+    padding-top: 47px;
+  }
+
+  .slider__item--first {
+    margin: 0 5.5%;
+    background:
+      url("../../img/black-card.png") no-repeat 310px 85px,
+      url("../../img/white-card.png") no-repeat 397px 41px,
+      linear-gradient(180.24deg, rgba(32, 39, 179, 0) 32.89%, #2027B3 99.79%) 590px no-repeat,
+      linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%) 410px 100px no-repeat,
+      $highlight-color;
+      background-size: 260px 180px, 260px 180px, 100% 300px, 179px 199px;
+  }
+
+  .slider__controls {
+    left: 48%;
+
+    li {
+      width: 8px;
+      height: 8px;
+      margin-right: 17px;
+    }
+
+    button {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .slider__item--second {
+    background: url('../../img/slider-2.png') no-repeat -159px, $slider-2-background;
+    background-size: cover, auto auto;
+
+    .slider__description {
+      width: 317px;
+      margin-top: 25px;
+    }
+  }
+
+  .slider__item--third {
+    background: url('../../img/slider-3.png') no-repeat -129px, $slider-3-background;
+    background-size: cover;
+
+    .slider__link {
+      padding: 14px 38px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .slider {
+    margin: 0 auto;
+  }
+
+  .slider,  .slider__item {
+    min-height: 400px;
+    max-width: 1366px;
+  }
+
+  .slider__headling {
+    font-size: 54px;
+    margin-top: 71px;
+  }
+
+  .slider__description {
+    margin-top: 32px;
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+
+  .slider__link {
+    font-size: 18px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .slider__container {
+    padding-left: 268px;
+    padding-top: 47px;
+  }
+
+  .slider__item--first {
+    margin: 0;
+    padding-bottom: 0;
+    background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 32.89%, #2027B3 99.79%),
+      $highlight-color;
+    background-size: 100% 400px, 100% 400px;
+
+    .slider__container {
+      background:
+        url("../../img/black-card.png") no-repeat 600px 120px,
+        url("../../img/white-card.png") no-repeat 710px 61px,
+        linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%) 700px 130px no-repeat,
+        linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%) 50px 130px no-repeat,
+        linear-gradient(183.47deg, $highlight-color, $highlight-color) 50px no-repeat;
+      background-size: 333px 228px, 333px 228px, 270px 269px, 150px 269px, 917px 100%;
+      height: 400px;
+      padding-left: 170px;
+      box-sizing: border-box;
+    }
+  }
+
+  .slider__controls {
+    left: 48.8%;
+    bottom: 30px;
+  }
+
+  .slider__item--second {
+    background: url('../../img/slider-2.png') no-repeat, $slider-2-background;
+    background-size: cover, auto auto;
+
+    .slider__description {
+      width: 388px;
+      margin-top: 35px;
+    }
+  }
+
+  .slider__item--third {
+    background: url('../../img/slider-3.png') no-repeat, $slider-3-background;
+    background-size: cover;
+
+    .slider__link {
+      padding: 14px 48px;
+    }
+  }
+}
