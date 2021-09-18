@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Header from '../header/header';
 import PromoSlider from '../promo-slider/promo-slider';
 import PopupLogin from '../popup-login/popup-login';
+import ServicesSection from '../services-section/services-section';
 
 export default function MainPage() {
   const [isPopupActive, setPopupStatus] = useState(false);
@@ -29,7 +30,9 @@ export default function MainPage() {
     <>
       <Header onLoginClick={() => setPopupStatus(true)} onKeyDown={onEscKeyDown}/>
       <main className="page-main">
+        <h1 className="visually-hidden">Лига банк</h1>
         <PromoSlider />
+        <ServicesSection />
         {isPopupActive && <PopupLogin onCloseClick={() => setPopupStatus(false)} onKeyDown={onEscKeyDown}/>}
       </main>
     </>

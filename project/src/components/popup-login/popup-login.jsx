@@ -77,7 +77,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
                   </button>
                 </div>
               </div>
-                <button className="popup-login__mark">Забыли пароль?</button>
+                <a className="popup-login__mark" href="#">Забыли пароль?</a>
             </div>
             <button
               className="popup-login__button"
