@@ -1,0 +1,658 @@
+// .services-section {
+//   min-height: 362px;
+//   background: $block-color;
+//   width: 100%;
+//   position: relative;
+//   padding-top: 38px;
+// }
+//
+// .services-section__container {
+//   width: 90%;
+// }
+//
+// .services-section__text {
+//   font-size: 16px;
+//   font-weight: 500;
+//   line-height: 22.4px;
+//   margin-bottom: 21px;
+// }
+//
+// .services-section__list {
+//   @include list;
+//   font-size: 14px;
+// }
+//
+// .services-section__list-item {
+//   padding-left: 14px;
+//   margin-bottom: 12px;
+//   line-height: 18.2px;
+//   width: 75%;
+// }
+
+.services-section__container {
+  width: 100%;
+  min-height: 362px;
+  overflow: hidden;
+  position: relative;
+  background: $block-color;
+}
+
+.services-section__items {
+  @include list;
+  display: flex;
+  width: 400%;
+  min-height: 362px;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
+}
+
+.services-section__item {
+  position: relative;
+  width: 100%;
+}
+
+.services-section__wrapper {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 38px;
+  min-height: 258px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.services-section__text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  margin-bottom: 21px;
+}
+
+.services-section__list {
+  @include list;
+  font-size: 14px;
+  max-width: 340px;
+}
+
+.services-section__list-item {
+  padding-left: 14px;
+  margin-bottom: 12px;
+  line-height: 18.2px;
+  width: 75%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    background: url("../../img/check.svg") 50% 50% no-repeat;
+    left: -3px;
+    top: 5px;
+  }
+}
+
+.services-section__button {
+  margin-top: auto;
+  margin-bottom: 0;
+  @include button;
+  width: 100%;
+  min-height: 43px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+.services-section__item--first {
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 126px;
+    height: 113px;
+    background: url("../../img/piggybank-mobile.png") 50% 50% no-repeat;
+    top: 27%;
+    left: 73%;
+  }
+}
+
+.services-section__controls {
+  position: absolute;
+  bottom: 5px;
+  left: 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include list;
+}
+
+.services-section__control-button {
+  background-color: $dark-highlight-color;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  border: none;
+  padding: 0;
+}
+
+.services-section__control-button--active {
+  background-color: $unactive-dot-color;
+}
+
+.services-section__item--second {
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 113px;
+    background: url("../../img/car-mobile.png");
+    top: 27%;
+    left: 73%;
+  }
+
+  .services-section__text {
+    padding-right: 50px;
+  }
+}
+
+.services-section__addition {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 21px;
+}
+
+.services-section__underline {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.services-section__item--third {
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 113px;
+    background: url("../../img/lock-mobile.png") no-repeat;
+    top: 27%;
+    left: 73%;
+  }
+
+  .services-section__text {
+    padding-right: 30px;
+  }
+}
+
+.services-section__item--fourth {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 132px;
+    height: 113px;
+    background: url("../../img/mobile-mobile.png");
+    top: 27%;
+    left: 73%;
+  }
+
+  .services-section__text {
+    padding-right: 40px;
+  }
+}
+
+.services-section__tabs {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .services-section__wrapper {
+    width: 88%;
+    margin-top: 55px;
+    display: block;
+  }
+
+  .services-section__text {
+    font-size: 18px;
+    width: 50%;
+    line-height: 25.2px;
+    margin-bottom: 24px;
+  }
+
+  .services-section__list-item {
+    padding-left: 19px;
+    margin-bottom: 15px;
+    line-height: 20.8px;
+    width: 100%;
+    font-size: 16px;
+
+    &::before {
+      width: 12px;
+      height: 10px;
+      top: 5px;
+      left: 0;
+      background-size: cover;
+    }
+  }
+
+  .services-section__list {
+    margin-top: 4px;
+    margin-bottom: 30px;
+  }
+
+  .services-section__button {
+    display: inline-block;
+    width: auto;
+    min-width: 198px;
+    min-height: 48px;
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+  .services-section__control-button {
+    background-color: $dark-highlight-color;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+  }
+
+  .services-section__control-button--active {
+    background-color: $unactive-dot-color;
+  }
+
+  .services-section__container {
+    min-height: 380px;
+  }
+
+  .services-section__items {
+    min-height: 380px;
+  }
+
+  .services-section__controls {
+    bottom: 7px;
+  }
+
+  .services-section__item--first {
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 289px;
+      height: 260px;
+      background: url("../../img/piggybank-tablet.png") 50% 50% no-repeat;
+      background-size: 289px 260px;
+      top: 15%;
+      left: 56.5%;
+    }
+  }
+
+  .services-section__item--second {
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 289px;
+      height: 260px;
+      background: url("../../img/car-tablet.png");
+      top: 16%;
+      left: 57%;
+    }
+
+    .services-section__text {
+      width: 35%;
+    }
+
+    .services-section__addition {
+      width: 50%;
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+  }
+
+  .services-section__item--third {
+    overflow: hidden;
+    &::before {
+      width: 289px;
+      height: 260px;
+      background: url("../../img/lock-tablet.png") no-repeat;
+      background-size: 289px 260px;
+      top: 16%;
+      left: 57%;
+    }
+
+    .services-section__text {
+      width: 45%;
+    }
+  }
+
+  .services-section__item--fourth {
+    &::before {
+      width: 289px;
+      height: 260px;
+      background: url("../../img/mobile-tablet.png");
+      background-size: 289px 260px;
+      top: 16%;
+      left: 57%;
+    }
+
+    .services-section__text {
+      padding-right: 40px;
+    }
+
+    .services-section__list {
+      width: 45%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .services-section__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @include list;
+    width: 1170px;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+
+  .services-section__container {
+    width: 1170px;
+  }
+
+  .services-section__tabs-button {
+    width: 100%;
+    min-height: 93px;
+    font-family: "Roboto", "Arial", sans-serif;
+    background-color: $basic-color;
+    color: $tabs-button-color;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 48px;
+
+    &:hover {
+      color: $light-highlight-color;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $block-color;
+    }
+  }
+
+  .services-section__tabs-button--active {
+    background-color: $block-color;
+  }
+
+  .services-section__tabs-button--first {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 34px;
+      height: 33px;
+      background: url("../../img/vault.svg");
+      left: 90px;
+      top: 30px;
+    }
+  }
+
+  .services-section__tabs-button--second {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 34px;
+      height: 30px;
+      background: url("../../img/cards.svg");
+      left: 90px;
+      top: 30px;
+    }
+  }
+
+  .services-section__tabs-button--third {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 34px;
+      background: url("../../img/security.svg");
+      left: 70px;
+      top: 30px;
+    }
+  }
+
+  .services-section__tabs-button--fourth {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 34px;
+      background: url("../../img/phone.svg");
+      left: 60px;
+      top: 30px;
+    }
+  }
+
+  .services-section__text {
+    font-size: 22px;
+    line-height: 30.8px;
+    width: 40%;
+  }
+
+  .services-section__list-item {
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+
+  .services-section__list {
+    max-width: 400px;
+    margin-bottom: 35px;
+  }
+
+  .services-section__button {
+    max-width: 400px;
+  }
+
+  .services-section__item--first {
+    &::before {
+      width: 440px;
+      height: 290px;
+      background: url("../../img/piggybank.png") 50% 50% no-repeat;
+      background-size: 440px 290px;
+      top: 15%;
+      left: 51%;
+    }
+  }
+
+  .services-section__item--second {
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 290px;
+      background: url("../../img/car.png");
+      top: 16%;
+      left: 51%;
+    }
+
+    .services-section__text {
+      width: 30%;
+      margin-bottom: 30px;
+    }
+
+    .services-section__addition {
+      width: 35%;
+      font-size: 18px;
+      line-height: 25.2px;
+    }
+
+    .services-section__list {
+      margin-bottom: 28px;
+    }
+  }
+
+  .services-section__item--third {
+    &::before {
+      width: 440px;
+      height: 290px;
+      background: url("../../img/lock.png") no-repeat;
+      background-size: 440px 290px;
+      top: 14%;
+      left: 51%;
+    }
+
+    .services-section__text {
+      width: 35%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .services-section__item--fourth {
+    &::before {
+      width: 440px;
+      height: 290px;
+      background: url("../../img/mobile.png");
+      background-size: 440px 290px;
+      top: 15%;
+      left: 51%;
+    }
+
+    .services-section__text {
+      margin-bottom: 30px;
+    }
+
+    .services-section__list {
+      width: 45%;
+    }
+  }
+
+  .services-section__controls {
+    display: none;
+  }
+
+  .services-section__item {
+    display: none;
+  }
+
+  .services-section__item--displayed {
+    display: block;
+  }
+
+  .services-section__items {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+// .service-section__previews {
+//   @include list;
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 465px;
+//   margin-right: 0;
+// }
+//
+// .service-section__control {
+//   width: 52px;
+//   height: 52px;
+//   display: block;
+//   border-radius: 50%;
+//   border: 1px solid $faded-color;
+//   position: relative;
+//   background-color: $main-color;
+// }
+//
+// .service-section__arrow {
+//   position: absolute;
+//   top: 18px;
+//   left: 12px;
+// }
+//
+// .service-section__arrow--next {
+//   left: 17px;
+// }
+//
+// .service-section__arrow--next {
+//   transform: rotate(180deg);
+// }
+//
+// .service-section__control {
+//   cursor: pointer;
+//
+//   .service-section__arrow {
+//     stroke: $main-text-color;
+//   }
+//
+//   &:hover {
+//     border-color: $button-color;
+//     .service-section__arrow {
+//       stroke: $button-color;
+//     }
+//   }
+//
+//   &:active,
+//   &:focus {
+//     border-color: $button-color;
+//     opacity: 0.5;
+//     .service-section__arrow {
+//       stroke: $button-color;
+//     }
+//   }
+//
+//   &:disabled {
+//     cursor: default;
+//     border-color: $faded-color;
+//
+//     .service-section__arrow {
+//       stroke: $faded-color;
+//     }
+//   }
+// }
+//
+// .service-section__down {
+//   display: flex;
+//   align-items: center;
+// }
+//
+// .service-section__previews {
+//   display: flex;
+//   order: 1;
+//   margin-left: 30px;
+// }
+//
+// .service-section__preview:not(last-of-type) {
+//   margin-right: 25.5px;
+// }
+//
+// .service-section__preview-current {
+//   opacity: 0.5;
+// }
+//
+// .service-section__control:last-of-type {
+//   order: 2
+// }
+//
+// .service-section__new-model {
+//   position: absolute;
+//   text-transform: uppercase;
+//   font-size: 10px;
+//   font-weight: 600;
+//   text-align: center;
+//   min-width: 122px;
+//   min-height: 30px;
+//   background-color: $button-color;
+//   top: 0;
+//   z-index: 1;
+//   color: $main-color;
+//   box-sizing: border-box;
+//   padding: 5px 0;
+//   letter-spacing: 0.07em;
+// }
+//
