@@ -37,7 +37,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
             method="post"
             onSubmit={onFormSubmit}
             action="https://echo.htmlacademy.ru/"
-            name="review-form"
+            name="login-form"
           >
             <div className="popup-login__form-fields">
               <label className="popup-login__label" htmlFor="login">Логин</label>

@@ -1,0 +1,146 @@
+.application__group {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border-color;
+}
+
+.application__list {
+  margin-bottom: 12px;
+}
+
+.application__value {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.application__input {
+  height: 60px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid $basic-font-color;
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  font-weight: 500;
+
+
+  &:hover {
+    border-color: $highlight-color;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $dark-highlight-color;
+  }
+}
+
+.application__submit {
+  @include button;
+  min-height: 51px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+@-webkit-keyframes shake {
+  0%, 100%                {transform: translateX(0);    }
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80%      {transform: translateX(10px); }
+}
+
+@keyframes shake {
+  0%, 100%                {transform: translateX(0);    }
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80%      {transform: translateX(10px); }
+}
+
+.application__error {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+@media (min-width: $tablet-width) {
+  .application__list {
+    margin-top: 27px;
+  }
+
+  .application__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 13px;
+  }
+
+  .application__value {
+    font-size: 22px;
+  }
+
+  .application__list {
+    margin-bottom: 10px;
+  }
+
+  .application__input {
+    padding-left: 22px;
+    padding-right: 22px;
+
+
+    &::placeholder {
+      font-size: 18px;
+    }
+  }
+
+  .application__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+  }
+
+  .application__input:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .application__button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 16px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .application {
+    width: 630px;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  .application__list {
+    margin-top: 15px;
+  }
+
+  .application__submit {
+    min-width: 198px;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 16px;
+  }
+
+  .application__button {
+    padding-left: 0;
+  }
+
+  .application__input {
+    background: transparent;
+  }
+}
