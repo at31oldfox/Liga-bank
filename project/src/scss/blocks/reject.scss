@@ -1,0 +1,77 @@
+.reject {
+  background-color: $block-color;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.reject__wrapper {
+  background-color: $block-color;
+  width: 89.66%;
+  margin: 0 auto;
+  padding-top: 37px;
+  padding-bottom: 20px;
+}
+
+.reject__message {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  margin-bottom: 0;
+}
+
+.reject__offer {
+  font-size: 16px;
+  color: $light-font-color;
+  line-height: 22.4px;
+  margin-top: 13px;
+}
+
+@media (min-width: $tablet-width) {
+  .reject {
+    box-sizing: border-box;
+    min-height: 225px;
+  }
+
+  .reject__message {
+    font-size: 22px;
+  }
+
+  .reject__wrapper {
+    width: 81.5%;
+    padding-top: 33px;
+  }
+
+  .reject__message {
+    width: 75%;
+    line-height: 30.8px;
+  }
+
+  .reject__offer {
+    width: 50%;
+    margin-top: 11px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .reject {
+    box-sizing: border-box;
+    min-height: 225px;
+    width: 500px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .reject__wrapper {
+    width: 77%;
+  }
+
+  .reject__message {
+    width: 95%;
+  }
+
+  .reject__offer {
+    width: 70%;
+  }
+}
