@@ -6,6 +6,7 @@ import PromoSlider from '../promo-slider/promo-slider';
 import PopupLogin from '../popup-login/popup-login';
 import ServicesSection from '../services-section/services-section';
 import Calculator from '../calculator/calculator';
+import Map from '../map/map';
 import PopupSuccess from '../popup-success/popup-success';
 import {getPopupSuccessStatus} from '../../store/selectors';
 import {onEscKeyDown} from '../../util.js';
@@ -37,6 +38,7 @@ export default function MainPage() {
         <PromoSlider />
         <ServicesSection />
         <Calculator/>
+        <Map/>
         {isPopupLoginActive && <PopupLogin onCloseClick={() => setPopupLoginStatus(false)} onKeyDown={onKeyDown}/>}
         {isPopupSuccessActive && <PopupSuccess />}
       </main>

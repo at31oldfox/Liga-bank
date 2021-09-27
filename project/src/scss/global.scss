@@ -20,3 +20,13 @@ select {
   outline: 0;
   outline-offset: 0;
 }
+
+.leaflet-container {
+  height: 381px;
+}
+
+@media (min-width: 768px) {
+  .leaflet-container {
+    height: 462px;
+  }
+}
