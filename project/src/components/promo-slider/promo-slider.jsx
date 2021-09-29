@@ -11,7 +11,7 @@ export default function PromoSlider() {
         <div className="slider__container container">
           <h2 className="slider__headling">Лига Банк</h2>
           <p className="slider__description">Кредиты на любой случай</p>
-          <a className="slider__link">Рассчитать кредит</a>
+          <a className="slider__link" href="#calculator">Рассчитать кредит</a>
         </div>
       </div>
       <div className="slider__item slider__item--second">
@@ -24,7 +24,7 @@ export default function PromoSlider() {
         <div className="slider__container container">
           <h2 className="slider__headling">Лига Банк</h2>
           <p className="slider__description">Всегда рядом</p>
-          <a className="slider__link">Найти отделение</a>
+          <a className="slider__link" href="#offices">Найти отделение</a>
         </div>
       </div>
     </Slider>

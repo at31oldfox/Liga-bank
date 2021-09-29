@@ -78,7 +78,7 @@ export default function Calculator() {
   return (
     <div className="calculator">
       <div className="calculator__container container">
-        <h2 className="calculator__title">Кредитный калькулятор</h2>
+        <h2 className="calculator__title" id="calculator">Кредитный калькулятор</h2>
         <form
           className="calculator__form"
           method="get"

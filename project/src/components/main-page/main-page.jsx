@@ -8,6 +8,7 @@ import ServicesSection from '../services-section/services-section';
 import Calculator from '../calculator/calculator';
 import Map from '../map/map';
 import PopupSuccess from '../popup-success/popup-success';
+import Footer from '../footer/footer';
 import {getPopupSuccessStatus} from '../../store/selectors';
 import {onEscKeyDown} from '../../util.js';
 
@@ -20,14 +21,11 @@ export default function MainPage() {
 
   const onKeyDown = (evt) => {
     onEscKeyDown(evt, () => setPopupLoginStatus(false));
+    bodyElement.classList.remove('page__body--unactive');
   };
 
   if (isPopupLoginActive || isPopupSuccessActive) {
     bodyElement.classList.add('page__body--unactive');
-  }
-
-  if ((!isPopupLoginActive || !isPopupSuccessActive) && bodyElement.classList.contains('page__body--unactive')) {
-    bodyElement.classList.remove('page__body--unactive')
   }
 
   return (
@@ -39,6 +37,7 @@ export default function MainPage() {
         <ServicesSection />
         <Calculator/>
         <Map/>
+        <Footer />
         {isPopupLoginActive && <PopupLogin onCloseClick={() => setPopupLoginStatus(false)} onKeyDown={onKeyDown}/>}
         {isPopupSuccessActive && <PopupSuccess />}
       </main>

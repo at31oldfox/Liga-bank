@@ -7,6 +7,8 @@ export default function PopupLogin() {
 
   const dispatch = useDispatch();
 
+  const bodyElement = document.querySelector('body');
+
   return (
     <section className="popup-success">
       <div className="popup-success__modal">
@@ -18,6 +20,7 @@ export default function PopupLogin() {
             aria-label="Закрыть"
             onClick={() => {
               dispatch(setPopupSuccessStatus(false));
+              bodyElement.classList.remove('page__body--unactive');
             }}
           >
           </button>

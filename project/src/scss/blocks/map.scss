@@ -6,6 +6,7 @@
 
 .map {
   padding-top: 33px;
+  margin-bottom: 60px;
 }
 
 .map__pin {
@@ -16,6 +17,7 @@
 @media (min-width: $tablet-width) {
   .map {
     padding-top: 45px;
+    margin-bottom: 80px;
   }
 
   .map__pin {
@@ -31,6 +33,10 @@
 }
 
 @media (min-width: $desktop-width) {
+  .map {
+    margin-bottom: 110px;
+  }
+
   .map__title {
     font-size: 41px;
     padding-top: 25px;

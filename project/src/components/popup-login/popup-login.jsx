@@ -6,11 +6,14 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
+  const bodyElement = document.querySelector('body');
+
   const onFormSubmit = (evt) => {
     evt.preventDefault();
     localStorage.setItem('login', login);
     localStorage.setItem('password', password);
     document.removeEventListener('keydown', onKeyDown);
+    bodyElement.classList.remove('page__body--unactive');
     onCloseClick();
   }
 
@@ -26,6 +29,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
             onClick={() => {
               onCloseClick();
               document.removeEventListener('keydown', onKeyDown);
+              bodyElement.classList.remove('page__body--unactive');
             }}
           >
           </button>
