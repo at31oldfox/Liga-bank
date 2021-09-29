@@ -19,8 +19,8 @@
   margin: 0 4.69%;
   padding-bottom: 30px;
   position: relative;
-  background: url("../../img/black-card.png") no-repeat 205px 35px,
-    url("../../img/white-card.png") no-repeat 300px 10px,
+  background: url("../../img/black-card.webp") no-repeat 205px 35px,
+    url("../../img/white-card.webp") no-repeat 300px 10px,
     $highlight-color;
     background-size: 250px 165px, 250px 165px;
 
@@ -106,7 +106,7 @@
 }
 
 .slider__item--second {
-  background: url('../../img/slider-2.png') no-repeat -295px, $slider-2-background;
+  background: url('../../img/slider-2.webp') no-repeat -295px, $slider-2-background;
   background-size: cover, auto auto;
   margin: 0;
 
@@ -123,7 +123,7 @@
 }
 
 .slider__item--third {
-  background: url('../../img/slider-3.png') no-repeat -283px, $slider-3-background;
+  background: url('../../img/slider-3.webp') no-repeat -283px, $slider-3-background;
   background-size: cover;
   margin: 0;
 
@@ -174,8 +174,8 @@
   .slider__item--first {
     margin: 0 5.5%;
     background:
-      url("../../img/black-card.png") no-repeat 310px 85px,
-      url("../../img/white-card.png") no-repeat 397px 41px,
+      url("../../img/black-card.webp") no-repeat 310px 85px,
+      url("../../img/white-card.webp") no-repeat 397px 41px,
       linear-gradient(180.24deg, rgba(32, 39, 179, 0) 32.89%, #2027B3 99.79%) 590px no-repeat,
       linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%) 410px 100px no-repeat,
       $highlight-color;
@@ -198,7 +198,7 @@
   }
 
   .slider__item--second {
-    background: url('../../img/slider-2.png') no-repeat -159px, $slider-2-background;
+    background: url('../../img/slider-2.webp') no-repeat -159px, $slider-2-background;
     background-size: cover, auto auto;
 
     .slider__description {
@@ -208,7 +208,7 @@
   }
 
   .slider__item--third {
-    background: url('../../img/slider-3.png') no-repeat -129px, $slider-3-background;
+    background: url('../../img/slider-3.webp') no-repeat -129px, $slider-3-background;
     background-size: cover;
 
     .slider__link {
@@ -275,7 +275,7 @@
       position: absolute;
       width: 333px;
       height: 228px;
-      background: url("../../img/black-card.png");
+      background: url("../../img/black-card.webp");
       right: 0;
       top: 120px;
       z-index: 3;
@@ -290,7 +290,7 @@
       position: absolute;
       width: 333px;
       height: 228px;
-      background: url("../../img/white-card.png");
+      background: url("../../img/white-card.webp");
       right: -100px;
       top: 60px;
 
@@ -306,7 +306,7 @@
   }
 
   .slider__item--second {
-    background: url('../../img/slider-2.png') no-repeat, $slider-2-background;
+    background: url('../../img/slider-2.webp') no-repeat, $slider-2-background;
     background-size: cover, auto auto;
 
     .slider__description {
@@ -316,7 +316,7 @@
   }
 
   .slider__item--third {
-    background: url('../../img/slider-3.png') no-repeat, $slider-3-background;
+    background: url('../../img/slider-3.webp') no-repeat, $slider-3-background;
     background-size: cover;
 
     .slider__link {

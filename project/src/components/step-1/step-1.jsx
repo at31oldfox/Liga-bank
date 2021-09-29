@@ -46,4 +46,6 @@ export default function Step1({activeOption, onOptionClick, isSelectActive, onSe
 Step1.propTypes = {
   activeOption: PropTypes.string.isRequired,
   onOptionClick: PropTypes.func.isRequired,
+  isSelectActive: PropTypes.bool.isRequired,
+  onSelectStatusChange: PropTypes.func.isRequired,
 }

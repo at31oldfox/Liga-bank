@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {MAX_PROPERTY_PRICE, MIN_PROPERTY_PRICE, DEFAULT_PRICE_VALUE,
-  DELETE_BUTTON_CODE, BACKSPACE_BUTTON_CODE, DEFAULT_PROPERTY_PERCENT_VALUE, DEFAULT_AUTO_PERCENT_VALUE, ERROR_MESSAGE,
+import {MAX_PROPERTY_PRICE, MIN_PROPERTY_PRICE, DEFAULT_PRICE_VALUE, DEFAULT_PROPERTY_PERCENT_VALUE, DEFAULT_AUTO_PERCENT_VALUE, ERROR_MESSAGE,
   PROPERTY_PRICE_STEP, AUTO_PRICE_STEP, PERCENT_STEP, MIN_HYPOTHEC_TERM, MAX_HYPOTHEC_TERM, CreditTypeFieldValue,
   MAX_AUTO_PRICE, MIN_AUTO_PRICE, MIN_HYPOTHEC_SUM, MIN_AUTOCREDIT_SUM,
   MATERNAL_CAPITAL, MIN_AUTOCREDIT_TERM, MAX_AUTOCREDIT_TERM, HypothecRateType, HYPOTHEC_RATE_BOARD,
@@ -44,7 +43,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
 
   const feeValue = !fee ? defaultFee : fee;
 
-  const onPriceChange = (evt) => {
+  const handlePriceChange = (evt) => {
     const value = Number(evt.target.value);
     if (typeof value === 'number') {
       onPriceFieldValueChange(Number(evt.target.value))
@@ -61,30 +60,23 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
     }
   }
 
-  const onDeleteKeydown = (evt) => {
-    if ((evt.keyCode === DELETE_BUTTON_CODE || evt.keyCode === BACKSPACE_BUTTON_CODE) && priceFieldValue === ERROR_MESSAGE) {
-      evt.preventDefault();
-      onPriceFieldValueChange(DEFAULT_PRICE_VALUE);
-    }
-  }
-
-  const onMinusButtonClick = (evt) => {
+  const handleMinusButtonClick = (evt) => {
     evt.preventDefault();
     onPriceFieldValueChange(priceFieldValue - priceStep);
   }
 
-  const onPlusButtonClick = (evt) => {
+  const handlePlusButtonClick = (evt) => {
     evt.preventDefault();
     onPriceFieldValueChange(priceFieldValue + priceStep);
   }
 
-  const onRangeChange = (evt) => {
+  const handleRangeChange = (evt) => {
     onPercentChange(evt.target.value);
 
-      onFeeChange(priceFieldValue * evt.target.value / 100);
+    onFeeChange(priceFieldValue * evt.target.value / 100);
   }
 
-  const onFeeValueChange = (evt) => {
+  const handleFeeValueChange = (evt) => {
     const value = Number(evt.target.value.replace(/\s/g, ''));
     if (typeof value === 'number') {
       const percentResultValue = value / priceFieldValue * 100;
@@ -125,7 +117,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
     setTermFieldStatus(false);
   }
 
-  const onTermValueChange = (evt) => {
+  const handleTermValueChange = (evt) => {
     const value = Number(evt.target.value);
     if (typeof value === 'number') {
       onTermChange(value);
@@ -190,23 +182,22 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
               name="price-field"
               id="price"
               value={`${isPriceFieldActive ? priceFieldValue : priceFieldValue.toLocaleString()}${typeof priceFieldValue === 'number' && !isPriceFieldActive ? ' рублей' : ''}`}
-              onChange={onPriceChange}
+              onChange={handlePriceChange}
               onFocus={() => setPriceFieldStatus(true)}
               onBlur={checkPrice}
               style={typeof priceFieldValue !== 'number' ? {color: 'red', borderColor: 'red'} : {}}
-              onKeyDown={onDeleteKeydown}
             />
             <button
               className="calculator__minus"
               aria-label="Минус"
-              onClick={onMinusButtonClick}
+              onClick={handleMinusButtonClick}
               disabled={priceFieldValue === minPrice}
             >
             </button>
             <button
               className="calculator__plus"
               aria-label="Плюс"
-              onClick={onPlusButtonClick}
+              onClick={handlePlusButtonClick}
               disabled={priceFieldValue === maxPrice}
             >
             </button>
@@ -220,7 +211,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
             className="calculator__input"
             type="text"
             value={`${feeValue.toLocaleString()}${typeof priceFieldValue === 'number' && !isFeeFieldActive ? ' рублей' : ''}`}
-            onChange={onFeeValueChange}
+            onChange={handleFeeValueChange}
             onFocus={() => setFeeFieldStatus(true)}
             onBlur={checkFeeField}
             id="fee"
@@ -234,7 +225,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
               max="100"
               value={roundNumber(percentValue)}
               step="5"
-              onChange={onRangeChange}
+              onChange={handleRangeChange}
             />
             <span className="range__inscription">{roundNumber(percentValue)}%</span>
           </div>
@@ -248,7 +239,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
             id="term"
             value={`${!term ? minTerm : term}${!isTermFieldActive ? ' лет' : ''}`}
             onFocus={() => setTermFieldStatus(true)}
-            onChange={onTermValueChange}
+            onChange={handleTermValueChange}
             onBlur={checkTerm}
           />
           <div className="range range--term">
@@ -285,4 +276,12 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
 
 Step2.propTypes = {
   activeOption: PropTypes.string.isRequired,
+  priceFieldValue: PropTypes.number.isRequired,
+  percent: PropTypes.number.isRequired,
+  term: PropTypes.number.isRequired,
+  onPriceFieldValueChange: PropTypes.func.isRequired,
+  onPercentChange: PropTypes.func.isRequired,
+  onTermChange: PropTypes.func.isRequired,
+  fee: PropTypes.number.isRequired,
+  onFeeChange: PropTypes.func.isRequired,
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getActiveOption} from '../../store/selectors';
+import {getActiveOption} from '../../store/app-interaction/selectors';
 import {CreditTypeFieldValue, MIN_HYPOTHEC_SUM, MIN_AUTOCREDIT_SUM} from '../../const.js';
 
 export default function Reject() {

@@ -23,10 +23,6 @@ export const MIN_AUTO_PRICE = 500000;
 
 export const DEFAULT_PRICE_VALUE = 2000000;
 
-export const DELETE_BUTTON_CODE = 46;
-
-export const BACKSPACE_BUTTON_CODE = 8;
-
 export const DEFAULT_PROPERTY_PERCENT_VALUE = 10;
 
 export const DEFAULT_AUTO_PERCENT_VALUE = 20;
@@ -78,3 +74,5 @@ export const NUMBER_DIGIT_COUNT = 4;
 export const CORD_X = 15;
 
 export const CORD_Y = 30;
+
+export const REDUSER_NAME = 'INTERACTION';

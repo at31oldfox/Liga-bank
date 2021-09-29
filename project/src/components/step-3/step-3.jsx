@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {setPopupSuccessStatus, setApplicationNumber} from '../../store/action';
-import {getApplicationNumber} from '../../store/selectors';
+import {getApplicationNumber} from '../../store/app-interaction/selectors';
 import MaskedInput from 'react-maskedinput';
 import PropTypes from 'prop-types';
 import {CreditTypeFieldValue, DEFAULT_PROPERTY_PERCENT_VALUE, DEFAULT_AUTO_PERCENT_VALUE, NUMBER_DIGIT_COUNT} from '../../const.js';
@@ -31,7 +31,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
     return Array(nullsCount).fill(0).join('') + stringFromNumber;
   }
 
-  const onFormSubmit = (evt) => {
+  const handleFormSubmit = (evt) => {
     evt.preventDefault();
     localStorage.setItem('initials', initials);
     localStorage.setItem('phoneNumber', phoneNumber);
@@ -44,11 +44,11 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
     dispatch(setPopupSuccessStatus(true));
     dispatch(setApplicationNumber());
 
-    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
     onApplicationSubmit();
   }
 
-  const onButtonClick = (evt) => {
+  const handleButtonClick = (evt) => {
     if (!initials || !phoneNumber || !email) {
       evt.preventDefault();
       setFormStatus(false);
@@ -56,7 +56,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
     }
   }
 
-  const onKeyDown = (evt) => {
+  const handleKeyDown = (evt) => {
     onEscKeyDown(evt, () => dispatch(setPopupSuccessStatus(false)));
   };
 
@@ -94,7 +94,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
         <form
           className={`application__form ${!isFormCorrect ? 'application__error' : ''}`}
           method="get"
-          onSubmit={onFormSubmit}
+          onSubmit={handleFormSubmit}
           action="https://echo.htmlacademy.ru/"
           name="application-form"
         >
@@ -126,7 +126,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
 
           <div className="application__button">
             <button className="application__submit" type="submit" onClick={(evt) => {
-              onButtonClick(evt);
+              handleButtonClick(evt);
               bodyElement.classList.add('page__body--unactive');
             }}>
               Отправить

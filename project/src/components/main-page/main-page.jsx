@@ -9,7 +9,7 @@ import Calculator from '../calculator/calculator';
 import Map from '../map/map';
 import PopupSuccess from '../popup-success/popup-success';
 import Footer from '../footer/footer';
-import {getPopupSuccessStatus} from '../../store/selectors';
+import {getPopupSuccessStatus} from '../../store/app-interaction/selectors';
 import {onEscKeyDown} from '../../util.js';
 
 export default function MainPage() {
@@ -19,7 +19,7 @@ export default function MainPage() {
 
   const bodyElement = document.querySelector('body');
 
-  const onKeyDown = (evt) => {
+  const handleKeyDown = (evt) => {
     onEscKeyDown(evt, () => setPopupLoginStatus(false));
     bodyElement.classList.remove('page__body--unactive');
   };
@@ -30,7 +30,7 @@ export default function MainPage() {
 
   return (
     <>
-      <Header onLoginClick={() => setPopupLoginStatus(true)} onKeyDown={onKeyDown}/>
+      <Header onLoginClick={() => setPopupLoginStatus(true)} onKeyDown={handleKeyDown}/>
       <main className="page-main">
         <h1 className="visually-hidden">Лига банк</h1>
         <PromoSlider />
@@ -38,7 +38,7 @@ export default function MainPage() {
         <Calculator/>
         <Map/>
         <Footer />
-        {isPopupLoginActive && <PopupLogin onCloseClick={() => setPopupLoginStatus(false)} onKeyDown={onKeyDown}/>}
+        {isPopupLoginActive && <PopupLogin onCloseClick={() => setPopupLoginStatus(false)} onKeyDown={handleKeyDown}/>}
         {isPopupSuccessActive && <PopupSuccess />}
       </main>
     </>

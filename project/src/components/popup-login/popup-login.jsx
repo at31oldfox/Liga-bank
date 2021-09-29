@@ -8,7 +8,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
 
   const bodyElement = document.querySelector('body');
 
-  const onFormSubmit = (evt) => {
+  const handleFormSubmit = (evt) => {
     evt.preventDefault();
     localStorage.setItem('login', login);
     localStorage.setItem('password', password);
@@ -39,7 +39,7 @@ export default function PopupLogin({onCloseClick, onKeyDown}) {
           <form
             className="popup-login__form"
             method="post"
-            onSubmit={onFormSubmit}
+            onSubmit={handleFormSubmit}
             action="https://echo.htmlacademy.ru/"
             name="login-form"
           >

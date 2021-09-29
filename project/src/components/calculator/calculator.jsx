@@ -5,7 +5,7 @@ import Step1 from '../step-1/step-1';
 import Step2 from '../step-2/step-2';
 import Step3 from '../step-3/step-3';
 import {CreditTypeFieldValue} from '../../const.js';
-import {getActiveOption} from '../../store/selectors';
+import {getActiveOption} from '../../store/app-interaction/selectors';
 import {changeOption} from '../../store/action';
 import {DEFAULT_PRICE_VALUE, DEFAULT_PROPERTY_PERCENT_VALUE, DEFAULT_AUTO_PERCENT_VALUE, MIN_HYPOTHEC_TERM, MIN_AUTOCREDIT_TERM} from '../../const.js';
 
@@ -21,7 +21,7 @@ export default function Calculator() {
 
   const dispatch = useDispatch();
 
-  const onOptionClick = (evt) => {
+  const handleOptionClick = (evt) => {
     dispatch(changeOption(evt.target.innerText));
     setSelectStatus(false);
     setPriceFieldValue(DEFAULT_PRICE_VALUE);
@@ -37,40 +37,40 @@ export default function Calculator() {
     }
   }
 
-  const formSubmitHeandler = (evt) => {
+  const handleFormSubmit = (evt) => {
     evt.preventDefault();
     setApplicationFormStatus(true);
   }
 
-  const priceFieldValueChangeHeandler = (value) => {
+  const handlePriceFieldValueChange = (value) => {
     setPriceFieldValue(value);
     if (isApplicationFormVisible) {
       setApplicationFormStatus(false);
     }
   }
 
-  const percentChangeHeandler = (value) => {
+  const handlePercentChange = (value) => {
     setPercent(value)
     if (isApplicationFormVisible) {
       setApplicationFormStatus(false);
     }
   }
 
-  const termChangeHeandler = (value) => {
+  const handleTermChange = (value) => {
     setTerm(value);
     if (isApplicationFormVisible) {
       setApplicationFormStatus(false);
     }
   }
 
-  const feeChangeHeandler = (value) => {
+  const handleFeeChange = (value) => {
     setFee(value);
     if (isApplicationFormVisible) {
       setApplicationFormStatus(false);
     }
   }
 
-  const applicationSubmitHeandler = () => {
+  const handleApplicationSubmit = () => {
     dispatch(changeOption(CreditTypeFieldValue.DEFAULT));
     setApplicationFormStatus(false);
   }
@@ -84,11 +84,11 @@ export default function Calculator() {
           method="get"
           action="https://echo.htmlacademy.ru/"
           name="calculator-form"
-          onSubmit={formSubmitHeandler}
+          onSubmit={handleFormSubmit}
         >
           <Step1
             activeOption={activeOption}
-            onOptionClick={onOptionClick}
+            onOptionClick={handleOptionClick}
             isSelectActive={isSelectActive}
             onSelectStatusChange={() => setSelectStatus(!isSelectActive)}/>
           {activeOption !== CreditTypeFieldValue.DEFAULT &&
@@ -98,13 +98,13 @@ export default function Calculator() {
               percent={percent}
               term={term}
               fee={fee}
-              onPriceFieldValueChange={priceFieldValueChangeHeandler}
-              onPercentChange={percentChangeHeandler}
-              onTermChange={termChangeHeandler}
-              onFeeChange={feeChangeHeandler}
+              onPriceFieldValueChange={handlePriceFieldValueChange}
+              onPercentChange={handlePercentChange}
+              onTermChange={handleTermChange}
+              onFeeChange={handleFeeChange}
             />}
         </form>
-        {isApplicationFormVisible && <Step3 activeOption={activeOption} price={priceFieldValue} fee={fee} term={term} onApplicationSubmit={applicationSubmitHeandler}/>}
+        {isApplicationFormVisible && <Step3 activeOption={activeOption} price={priceFieldValue} fee={fee} term={term} onApplicationSubmit={handleApplicationSubmit}/>}
       </div>
     </div>
   );

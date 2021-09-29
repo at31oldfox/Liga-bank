@@ -8,7 +8,7 @@ export default function ServicesSection() {
   const [resultCordinate, setResultCordinate] = useState(0);
   const [activeTab, setActiveTab] = useState(TabType.VAULT);
 
-  const makeSwipe = (evt) => {
+  const handleSwipe = (evt) => {
     setResultCordinate(evt.changedTouches[0].clientX);
     if (initialCordinate < resultCordinate && offset < 0) {
       setOffset(offset + IMAGE_WIDTH);
@@ -57,7 +57,7 @@ export default function ServicesSection() {
       <div
         className="services-section"
         onTouchStart={(evt) => setInitialCordinate(evt.touches[0].clientX)}
-        onTouchEnd={makeSwipe}
+        onTouchEnd={handleSwipe}
       >
         <div className="services-section__container container">
           <ul className="services-section__items" style={{left: `${offset}%`}}>

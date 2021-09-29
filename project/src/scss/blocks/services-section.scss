@@ -86,7 +86,7 @@
     position: absolute;
     width: 126px;
     height: 113px;
-    background: url("../../img/piggybank-mobile.png") 50% 50% no-repeat;
+    background: url("../../img/piggybank-mobile.webp") 50% 50% no-repeat;
     top: 27%;
     left: 73%;
   }
@@ -123,7 +123,7 @@
     position: absolute;
     width: 155px;
     height: 113px;
-    background: url("../../img/car-mobile.png");
+    background: url("../../img/car-mobile.webp");
     top: 27%;
     left: 73%;
   }
@@ -151,7 +151,7 @@
     position: absolute;
     width: 125px;
     height: 113px;
-    background: url("../../img/lock-mobile.png") no-repeat;
+    background: url("../../img/lock-mobile.webp") no-repeat;
     top: 27%;
     left: 73%;
   }
@@ -167,7 +167,7 @@
     position: absolute;
     width: 132px;
     height: 113px;
-    background: url("../../img/mobile-mobile.png");
+    background: url("../../img/mobile-mobile.webp");
     top: 27%;
     left: 73%;
   }
@@ -256,7 +256,7 @@
       position: absolute;
       width: 289px;
       height: 260px;
-      background: url("../../img/piggybank-tablet.png") 50% 50% no-repeat;
+      background: url("../../img/piggybank-tablet.webp") 50% 50% no-repeat;
       background-size: 289px 260px;
       top: 15%;
       left: 56.5%;
@@ -270,7 +270,7 @@
       position: absolute;
       width: 289px;
       height: 260px;
-      background: url("../../img/car-tablet.png");
+      background: url("../../img/car-tablet.webp");
       top: 16%;
       left: 57%;
     }
@@ -291,7 +291,7 @@
     &::before {
       width: 289px;
       height: 260px;
-      background: url("../../img/lock-tablet.png") no-repeat;
+      background: url("../../img/lock-tablet.webp") no-repeat;
       background-size: 289px 260px;
       top: 16%;
       left: 57%;
@@ -306,7 +306,7 @@
     &::before {
       width: 289px;
       height: 260px;
-      background: url("../../img/mobile-tablet.png");
+      background: url("../../img/mobile-tablet.webp");
       background-size: 289px 260px;
       top: 16%;
       left: 57%;
@@ -449,7 +449,7 @@
     &::before {
       width: 440px;
       height: 290px;
-      background: url("../../img/piggybank.png") 50% 50% no-repeat;
+      background: url("../../img/piggybank.webp") 50% 50% no-repeat;
       background-size: 440px 290px;
       top: 15%;
       left: 51%;
@@ -463,7 +463,7 @@
       position: absolute;
       width: 440px;
       height: 290px;
-      background: url("../../img/car.png");
+      background: url("../../img/car.webp");
       top: 16%;
       left: 51%;
     }
@@ -488,7 +488,7 @@
     &::before {
       width: 440px;
       height: 290px;
-      background: url("../../img/lock.png") no-repeat;
+      background: url("../../img/lock.webp") no-repeat;
       background-size: 440px 290px;
       top: 14%;
       left: 51%;
@@ -504,7 +504,7 @@
     &::before {
       width: 440px;
       height: 290px;
-      background: url("../../img/mobile.png");
+      background: url("../../img/mobile.webp");
       background-size: 440px 290px;
       top: 15%;
       left: 51%;

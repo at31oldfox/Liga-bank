@@ -1,6 +1,6 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {changeOption, setPopupSuccessStatus, setApplicationNumber} from './action';
-import {CreditTypeFieldValue} from '../const';
+import {changeOption, setPopupSuccessStatus, setApplicationNumber} from '../action';
+import {CreditTypeFieldValue} from '../../const';
 
 const initialState = {
   option: CreditTypeFieldValue.DEFAULT,
@@ -8,7 +8,7 @@ const initialState = {
   applicationNumber: 1,
 };
 
-const reducer = createReducer(initialState, (builder) => {
+const appInteraction = createReducer(initialState, (builder) => {
   builder
     .addCase(changeOption, (state, action) => {
       state.option = action.payload;
@@ -21,4 +21,4 @@ const reducer = createReducer(initialState, (builder) => {
     });
 });
 
-export {reducer};
+export {appInteraction};
