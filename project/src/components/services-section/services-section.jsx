@@ -19,7 +19,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <>
+    <div className="container services-section__main-container">
       <ul className="services-section__tabs">
         <li className="services-section__tabs-item">
           <button
@@ -139,6 +139,6 @@ export default function ServicesSection() {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }

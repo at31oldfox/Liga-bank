@@ -8,6 +8,7 @@
   z-index: 12;
   box-sizing: border-box;
   background-color: rgba($shadow-color, .3);
+  z-index: 10000;
 }
 
 .popup-login__modal {
@@ -111,7 +112,7 @@
 
 .popup-login__mark {
   position: absolute;
-  bottom: -40px;
+  bottom: -45px;
   background-color: transparent;
   border: none;
   display: block;
@@ -163,6 +164,7 @@
     width: 88.28%;
     min-height: 493px;
     padding-top: 53px;
+    box-sizing: border-box;
   }
 
   .popup-login__wrapper {
@@ -204,7 +206,7 @@
 
   .popup-login__button {
     font-size: 18px;
-    margin-top: 23px;
+    margin-top: 18px;
     width: calc(100% - 4px);
     min-height: 60px;
   }
@@ -220,8 +222,10 @@
     padding-right: 3px;
   }
 
-  .popup-login__input[type="password"] {
-    margin-bottom: 8px;
+  .popup-login__password {
+    .popup-login__input {
+      margin-bottom: 8px;
+    }
   }
 
   .popup-login__show {

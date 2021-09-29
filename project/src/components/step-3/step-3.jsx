@@ -127,6 +127,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
           <div className="application__button">
             <button className="application__submit" type="submit" onClick={(evt) => {
               onButtonClick(evt);
+              bodyElement.classList.add('page__body--unactive');
             }}>
               Отправить
             </button>

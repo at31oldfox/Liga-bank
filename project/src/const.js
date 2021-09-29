@@ -74,3 +74,7 @@ export const MOUNTH_COUNT = 12;
 export const MIN_SHARE_OF_INCOME = 45;
 
 export const NUMBER_DIGIT_COUNT = 4;
+
+export const CORD_X = 15;
+
+export const CORD_Y = 30;

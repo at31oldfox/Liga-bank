@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 export default function Header({onLoginClick, onKeyDown}) {
   const [isMenuOpened, setMenuStatus] = useState(false);
 
+  const bodyElement = document.querySelector('body');
+
   return (
     <header className="page-header">
       <div className="page-header__container container">
         <div className="page-header__left">
-          <picture>
+          <picture className="page-header__picture">
             <source media="(min-width: 1200px)" srcSet="img/logo-desktop.svg"/>
             <source media="(min-width: 768px)" srcSet="img/logo-tablet.svg"/>
             <img className="page-header__logo" src="img/logo-mobile.svg" alt="Логотип"/>
@@ -54,14 +56,20 @@ export default function Header({onLoginClick, onKeyDown}) {
             className="navigation__button"
             type="button"
             aria-label="Открыть меню"
-            onClick={() => setMenuStatus(true)}
+            onClick={() => {
+              setMenuStatus(true);
+              bodyElement.classList.add('page__body--unactive');
+            }}
           >
           </button>
           <button
             className="navigation__close"
             type="button"
             aria-label="Закрыть меню"
-            onClick={() => setMenuStatus(false)}
+            onClick={() => {
+              setMenuStatus(false);
+              bodyElement.classList.remove('page__body--unactive');
+            }}
           >
           </button>
         </nav>

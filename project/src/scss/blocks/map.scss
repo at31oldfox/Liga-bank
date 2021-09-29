@@ -1,0 +1,45 @@
+.map__title {
+  font-size: 22px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+}
+
+.map {
+  padding-top: 33px;
+  margin-bottom: 60px;
+}
+
+.map__pin {
+  width: 29px;
+  height: 33px;
+}
+
+@media (min-width: $tablet-width) {
+  .map {
+    padding-top: 45px;
+    margin-bottom: 80px;
+  }
+
+  .map__pin {
+    width: 35px;
+    height: 44px;
+  }
+
+  .map__title {
+    font-size: 32px;
+    margin-left: 0;
+    margin-bottom: 47px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map {
+    margin-bottom: 110px;
+  }
+
+  .map__title {
+    font-size: 41px;
+    padding-top: 25px;
+    margin-bottom: 75px;
+  }
+}

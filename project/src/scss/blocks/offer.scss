@@ -87,10 +87,16 @@
 
   .offer__list {
     width: 100%;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .offer__item {
     font-size: 16px;
+  }
+
+  .offer__group:nth-of-type(2) {
+    padding-right: 10px;
   }
 }
