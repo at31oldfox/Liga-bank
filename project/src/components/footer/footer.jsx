@@ -6,9 +6,9 @@ export default function Footer() {
     <footer className="page-footer">
       <div className="page-footer__container container">
         <picture className="page-footer__picture">
-          <source media="(min-width: 1200px)" srcSet="img/logo-desktop.svg"/>
-          <source media="(min-width: 768px)" srcSet="img/logo-tablet.svg"/>
-          <img className="page-footer__logo" src="img/logo-mobile.svg" alt="Логотип"/>
+          <source media="(min-width: 1200px)" srcSet="img/logo-desktop.svg" width="149" height="25"/>
+          <source media="(min-width: 768px)" srcSet="img/logo-tablet.svg" width="133" height="22"/>
+          <img className="page-footer__logo" src="img/logo-mobile.svg" width="115" height="17" alt="Логотип"/>
           </picture>
 
           <p className="page-footer__license">150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050 Ⓒ Лига Банк, 2019</p>
@@ -16,16 +16,16 @@ export default function Footer() {
         <nav className="page-footer__navigation">
           <ul className="page-footer__menu">
             <li className="page-footer__menu-item">
-              <a className="page-footer__menu-link">Услуги</a>
+              <a className="page-footer__menu-link" href="#">Услуги</a>
             </li>
             <li className="page-footer__menu-item">
-              <a className="page-footer__menu-link">Рассчитать кредит</a>
+              <a className="page-footer__menu-link" href="#">Рассчитать кредит</a>
             </li>
             <li className="page-footer__menu-item">
-              <a className="page-footer__menu-link">Контакты</a>
+              <a className="page-footer__menu-link" href="#">Контакты</a>
             </li>
             <li className="page-footer__menu-item">
-              <a className="page-footer__menu-link">Задать вопрос</a>
+              <a className="page-footer__menu-link" href="#">Задать вопрос</a>
             </li>
           </ul>
         </nav>

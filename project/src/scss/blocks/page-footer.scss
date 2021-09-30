@@ -22,6 +22,8 @@
 .page-footer__menu-link {
   font-size: 14px;
   font-weight: 500;
+  color: $basic-font-color;
+  text-decoration: none;
 
   &:hover {
     color: $highlight-color;
