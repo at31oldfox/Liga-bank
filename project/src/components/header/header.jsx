@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 export default function Header({onLoginClick, onKeyDown}) {
   const [isMenuOpened, setMenuStatus] = useState(false);
 
+  // плохая идея опираться на DOM уверен есть вариант избежать этого
   const bodyElement = document.querySelector('body');
 
   return (

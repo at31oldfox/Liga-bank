@@ -231,6 +231,7 @@ export default function Step2({activeOption, priceFieldValue, percent, term, onP
           </div>
         </div>
 
+{/* можно делать отдельный элемент - инпут со слайдером */}
         <div className="calculator__group">
           <label className="calculator__label" htmlFor="term">Срок кредитования</label>
           <input

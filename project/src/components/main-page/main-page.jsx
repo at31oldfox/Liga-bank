@@ -19,6 +19,7 @@ export default function MainPage() {
 
   const bodyElement = document.querySelector('body');
 
+  // очень упрощает жизнь пакет типа classnames
   const handleKeyDown = (evt) => {
     onEscKeyDown(evt, () => setPopupLoginStatus(false));
     bodyElement.classList.remove('page__body--unactive');

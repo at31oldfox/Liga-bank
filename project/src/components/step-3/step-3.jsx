@@ -25,6 +25,7 @@ export default function Step3({activeOption, price, fee, term, onApplicationSubm
 
   const bodyElement = document.querySelector('body');
 
+  // похоже на хелпер и можно убрать из компонента
   const formatNumber = (number) => {
     const stringFromNumber = String(number);
     const nullsCount = NUMBER_DIGIT_COUNT - stringFromNumber.length;
